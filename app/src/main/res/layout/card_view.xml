@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+
+        android:background="@android:drawable/dialog_holo_dark_frame"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp"
+        android:id="@+id/cv"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:padding="0dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="148dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/background"
+                android:src="@drawable/backgroundtest"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true" />
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:id="@+id/priceBG"
+                android:background="@color/colorGreenBackground"
+                android:layout_marginBottom="-10dp"
+                android:layout_alignBottom="@+id/price"
+                android:layout_alignStart="@+id/background" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="99€"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                android:id="@+id/price"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="40dp"
+                android:layout_alignBottom="@+id/background"
+                android:layout_alignStart="@+id/background" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" per night"
+                android:textStyle="bold"
+                android:layout_marginBottom="3dp"
+                android:textColor="#ffffff"
+                android:id="@+id/textView3"
+                android:textSize="10sp"
+                android:layout_alignBottom="@+id/price"
+                android:layout_toEndOf="@+id/price" />
+
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorGreyishBrown"
+                android:text="Umag Center"
+                android:id="@+id/todo"
+                android:textSize="25sp"
+                android:layout_below="@+id/background"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentStart="true" />
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWarmGrey"
+                android:text="2 bedroom flat in the city center, close to the beach"
+                android:id="@+id/type"
+                android:textSize="10.5sp"
+                android:layout_below="@+id/todo"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="12dp"
+                android:layout_alignParentStart="true" />
+
+
+
+
+
+            <ImageView
+                android:layout_width="33dp"
+                android:layout_height="20.5dp"
+                android:id="@+id/rooms"
+                android:background="@drawable/room"
+                android:layout_below="@+id/type"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="28dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/colorGreyishBrown"
+                android:text="2 Rooms"
+                android:id="@+id/roomAmount"
+                android:layout_centerInParent="@+id/rooms"
+                android:layout_marginStart="-8dp"
+                android:layout_alignTop="@+id/bedAmount"
+                android:layout_alignStart="@+id/rooms" />
+
+
+
+
+
+            <ImageView
+                android:layout_width="33dp"
+                android:layout_height="20.5dp"
+                android:id="@+id/beds"
+                android:background="@drawable/bed"
+                android:layout_alignTop="@+id/rooms"
+                android:layout_toEndOf="@+id/rooms"
+                android:layout_marginStart="50dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/colorGreyishBrown"
+                android:text="2 Beds"
+                android:id="@+id/bedAmount"
+                android:layout_marginEnd="-1dp"
+                android:layout_below="@+id/beds"
+                android:layout_marginTop="10dp"
+                android:layout_alignEnd="@+id/beds" />
+
+
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="VIEW DETAILS"
+                android:textStyle=""
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/button"
+                android:background="#ffffff"
+                android:layout_below="@+id/line"
+                android:layout_alignEnd="@+id/background"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="0dp"
+                android:clickable="true" />
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:id="@+id/line"
+                android:layout_marginTop="40dp"
+                android:background="@color/colorWarmGrey"
+                android:layout_alignTop="@+id/bedAmount"
+                android:layout_alignStart="@+id/background" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
