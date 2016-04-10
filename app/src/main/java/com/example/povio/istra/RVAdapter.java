@@ -1,10 +1,9 @@
 package com.example.povio.istra;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +21,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.InfoViewHolder> {
             implements View.OnClickListener{
 
         private View.OnClickListener clickListener;
-        CardView cv;
         ImageView background;
         TextView price;
         TextView name;
@@ -33,7 +31,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.InfoViewHolder> {
 
         InfoViewHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
+            //itemView.setOnClickListener(this);
             background = (ImageView) itemView.findViewById(R.id.background);
             price = (TextView) itemView.findViewById(R.id.price);
             name = (TextView) itemView.findViewById(R.id.todo);
@@ -45,7 +43,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.InfoViewHolder> {
 
         @Override
         public void onClick(View v) {
-            //clickListener.onClick(v);
+            clickListener.onClick(v);
         }
     }
 
@@ -68,10 +66,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.InfoViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(InfoViewHolder holder, int position) {
-        /**
-        //TODO use getters instead of .back*** etc..
-        */
+    public void onBindViewHolder(InfoViewHolder holder, final int position) {
         holder.background.setImageResource(data.get(position).getBackground());
         holder.price.setText(data.get(position).price);
         holder.name.setText(data.get(position).name);
@@ -82,8 +77,13 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.InfoViewHolder> {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, MoreInfo.class);
+                intent.putExtra("name", data.get(position).getName());
+                intent.putExtra("price", data.get(position).getPrice());
+                intent.putExtra("rooms", data.get(position).getRooms());
+                intent.putExtra("beds", data.get(position).getBeds());
                 mContext.startActivity(intent);
-                Toast.makeText(mContext, "Add new Activity", Toast.LENGTH_SHORT).show();
+                ((Activity) mContext).overridePendingTransition(R.anim.bring_on, R.anim.wait_till);
+                Toast.makeText(mContext, data.get(position).getName(), Toast.LENGTH_SHORT).show();
             }
         });
         /**

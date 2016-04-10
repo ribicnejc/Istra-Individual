@@ -18,13 +18,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <android.support.v4.view.ViewPager
                 android:id="@+id/view_pager"
-
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_weight="1"
@@ -32,8 +30,11 @@
                 android:scaleType="centerCrop"
                 android:background="@drawable/istra"/>
             <me.relex.circleindicator.CircleIndicator
-                android:layout_width="match_parent"
-                android:layout_height="48dp"/>
+                android:id="@+id/indicator"
+                android:layout_alignBottom="@+id/view_pager"
+                android:layout_centerInParent="true"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"/>
 
         </RelativeLayout>
 
@@ -58,10 +59,10 @@
             android:textSize="25sp"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
-            android:id="@+id/textView2"
+            android:id="@+id/name"
+            android:layout_marginEnd="5dp"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/cityName"
-            android:layout_marginStart="21dp" />
+            android:layout_toStartOf="@+id/textView4" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,10 +70,9 @@
             android:text="per night"
             android:textColor="@color/colorPrimary"
             android:id="@+id/textView4"
-            android:layout_alignBaseline="@+id/textView2"
-            android:layout_alignBottom="@+id/textView2"
-            android:layout_toEndOf="@+id/textView2"
-            android:layout_marginStart="8dp" />
+            android:layout_marginEnd="20dp"
+            android:layout_alignBottom="@+id/name"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
     <RelativeLayout
@@ -154,6 +154,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3 beds"
+            android:id="@+id/bedAmount2"
             android:layout_marginTop="10dp"
             android:textSize="12sp"
             android:layout_marginStart="35dp"
