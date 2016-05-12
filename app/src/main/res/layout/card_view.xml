@@ -140,7 +140,7 @@
                 android:textColor="@color/colorGreyishBrown"
                 android:text="2 Beds"
                 android:id="@+id/bedAmount"
-                android:layout_marginEnd="-1dp"
+                android:layout_marginEnd="-2dp"
                 android:layout_below="@+id/beds"
                 android:layout_marginTop="10dp"
                 android:layout_alignEnd="@+id/beds" />

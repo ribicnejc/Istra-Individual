@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class SwipeImageAdapter extends PagerAdapter {
-    private int[] image_resource = {R.drawable.backgroundtest, R.drawable.istra, R.drawable.koper};
+    private int[] image_resource = {R.drawable.backgroundtest, R.drawable.istra, R.drawable.koper, R.drawable.korcula};
     private Context ctx;
     private LayoutInflater layoutInflater;
 
